@@ -1,0 +1,155 @@
+<app-header></app-header>
+<!-- Start Page Title Area -->
+<div class="page-title-area">
+  <div class="container">
+    <div class="page-title-content">
+      <h2>{{ post.namePost }}</h2>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>Blog Details</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Blog Details Area -->
+<section class="blog-details-area ptb-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="blog-details">
+          <div class="article-image">
+            <img src="{{ post.imageUrl }}" alt="image" />
+          </div>
+
+          <div class="article-content">
+            <div class="entry-meta">
+              <ul>
+                <li>
+                  <i class="far fa-user-circle"></i>
+                  By: {{ post.user.username }}<a href="#"></a>
+                  <p></p>
+                </li>
+
+                <li>{{ post.createdAt | date : "short" }}</li>
+
+                <li>
+                  <a href="#">{{ comments.length }} Comments</a>
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              {{ post.contentPost }}
+            </p>
+          </div>
+
+         <!--  <div class="article-footer">
+            <div class="article-tags">
+              <span><i class="fas fa-bookmark"></i></span>
+
+              <a href="#">Fashion</a>, <a href="#">Games</a>,
+              <a href="#">Travel</a>
+            </div>
+
+            <div class="article-share">
+              <ul class="social">
+                <li>
+                  <a href="#" target="_blank"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+ -->
+     <!--   -->
+        </div>
+
+        <div class="comments-area">
+          <h3 class="comments-title">{{ comments.length }} Comments</h3>
+
+          <ol class="comment-list">
+            <li class="comment" *ngFor="let comment of comments">
+              <article class="comment-body">
+                <footer class="comment-meta">
+                  <div class="comment-author vcard">
+                    <img
+                      src="assets/img/author1.jpg"
+                      class="avatar"
+                      alt="image"
+                    />
+                    <b class="fn">{{ comment.user.username }}</b>
+                    <span class="says">says:</span>
+                  </div>
+
+                  <div class="comment-metadata">
+                    <a href="#">
+                      <time>{{ comment.createdAt | date : "short" }}</time>
+                    </a>
+                  </div>
+                </footer>
+
+                <div class="comment-content">
+                  <div
+                    *ngIf="updateComment == comment.idComment; else contentShow"
+                  >
+                    <app-comment-blog
+                      [comment]="comment"
+                      (commentUpdated)="onCommentUpdated($event)"
+                    ></app-comment-blog>
+                  </div>
+                  <ng-template #contentShow
+                    ><p>
+                      {{ comment.content }}
+                    </p></ng-template
+                  >
+
+                  <button
+                    class="btn-delete"
+                    (click)="removeComment(comment.idComment)"
+                  >
+                    Delete
+                  </button>
+
+                  <button class="btn-edit" (click)="editComment(comment)">
+                    Edit
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ol>
+
+          <app-reply-section [postId]="postId"></app-reply-section>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12">
+        <aside class="widget-area" id="secondary">
+          <app-post-search></app-post-search>
+          <app-popular-posts></app-popular-posts>
+
+          
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Blog Details Area -->
+
+<app-footer></app-footer>

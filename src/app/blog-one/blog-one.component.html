@@ -1,0 +1,104 @@
+<app-header></app-header>
+<div class="page-title-area">
+  <div class="container">
+    <div class="page-title-content">
+      <h2>Welcome to the blog</h2>
+
+      <ul>
+        <li><a routerLink="/aboutUs">Home</a></li>
+        <li>Posts</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="blog-area ptb-120">
+  <div *ngIf="user !== undefined">
+    <h5>
+      <button (click)="showPostForm()" class="btn btn-primary buttoncenter">
+        Create a post
+      </button>
+      <div *ngIf="showForm" class="mt-4">
+        <app-post-form (postCreated)="handleCreated($event)"></app-post-form>
+      </div>
+    </h5>
+  </div>
+</section>
+
+<section>
+  <div class="button-container" *ngIf="user !== undefined">
+    <button (click)="getPostsByUser()" class="btn btn-primary">My Posts</button>
+
+    <button (click)="clearFilter()" class="btn btn-primary">x</button>
+  </div>
+</section>
+
+
+<section class="blog-area ptb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6" *ngFor="let post of posts">
+        <div class="single-services-box">
+          <a [routerLink]="['/single-blog', post.idPost]"
+            ><img [src]="post.imageUrl" alt="image" />
+          </a>
+
+          <div>
+            <h4 class="fl-post-grid-text center" itemprop="headline">
+              <a [routerLink]="['/single-blog', post.idPost]">{{
+                post.namePost
+              }}</a>
+            </h4>
+            <span class="fl-post-grid-date center"
+              >By {{ post.user.username }}, {{ post.createdAt | date
+              }}<a [routerLink]="['/single-blog', post.idPost]"> </a
+            ></span>
+            <a
+            [routerLink]="['/single-blog', post.idPost]"
+            class="fl-post-grid-more center"
+            >Tap to see the content <i class="fl-post-grid-more"></i
+          ></a>
+        
+            <app-reactions [post]="post" [user]="this.user"> </app-reactions>
+            
+            <!-- 
+            <div *ngIf="post.contentPost.length > 255; else shortPost">
+              <p style="overflow-x: hidden; height: 150px">
+                {{ post.contentPost | slice : 0 : 310 }}...
+              </p>
+            </div>
+            <ng-template #shortPost>
+              <p style="overflow-x: hidden; height: 150px">
+                {{ post.contentPost }}
+              </p>
+            </ng-template>
+          -->
+          
+            <div *ngIf="showButtons">
+              <button (click)="deletePost(post.idPost)" class="btn btn-primary">
+                Delete
+              </button>
+
+              <button
+                class="btn btn-primary"
+                type="submit"
+                (click)="openUpdateForm(post.idPost)"
+              >
+                Update
+              </button>
+              <div *ngIf="updateForm == post.idPost">
+                <app-update-post
+                  [post]="post"
+                  (updatePost)="handleUpdatePost($event)"
+                ></app-update-post>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

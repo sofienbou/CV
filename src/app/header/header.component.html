@@ -1,0 +1,66 @@
+<div class="navbar-area">
+  <div class="labto-mobile-nav">
+    <div class="logo">
+      <a routerLink="/home"><img src="assets/img/" alt="logo" /></a>
+    </div>
+  </div>
+
+  <div class="labto-nav">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" routerLink="/home"
+          ><img src="assets/img/" alt="logo"
+        /></a>
+
+        <div
+          class="collapse navbar-collapse mean-menu"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a routerLink="/aboutUs" class="nav-link">About me</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a routerLink="/blogOne" class="nav-link">Blog</a>
+             
+            </li>
+
+            <li class="nav-item">
+              <a routerLink="/contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+
+          <div class="others-options">
+            <!-- <div class="languages-list">
+              <select>
+                <option value="1">En</option>
+                <option value="2">Ge</option>
+                <option value="3">Spa</option>
+              </select>
+            </div> -->
+
+           <!--  <a routerLink="/cart" class="cart-btn"
+              ><i class="flaticon-shopping-bag"></i>
+              <span>04</span>
+            </a> -->
+
+            <a routerLink="/login" class="btn btn-secondary" *ngIf="!isLoggedIn"
+              >LOGIN !</a
+            >
+            <div class="dropdown" *ngIf="isLoggedIn">
+              <img src="{{ imageName }}" class="userImg" /><i
+                class="fas fa-chevron-down"
+              ></i>
+              <div class="dropdown-content">
+                <a routerLink="/edit">Settings</a>
+                <a (click)="logout()" routerLink="/login">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

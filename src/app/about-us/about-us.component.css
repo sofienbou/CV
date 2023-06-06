@@ -1,0 +1,54 @@
+.container-all.container-all {
+  justify-content: flex-end;
+}
+
+.img-container {
+  margin-right: 50px !important;
+}
+
+.taswirti {
+  margin-right: 50px !important;
+  padding: 0 2em !important;
+}
+.big-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+}
+.normal-text {
+  text-align: center;
+}
+.normal-text li {
+  margin-bottom: 5px;
+}
+
+.normal-text li {
+  margin-bottom: 5px;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-effect {
+  transition: transform 0.3s;
+}
+
+.shake-effect:hover {
+  animation: shake 0.5s;
+}
