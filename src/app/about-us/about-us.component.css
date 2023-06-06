@@ -52,3 +52,10 @@
 .shake-effect:hover {
   animation: shake 0.5s;
 }
+.bg{
+
+  
+  border-radius: 0.75rem;
+  padding: 2rem;
+  background-color: #f3f4f6;
+}

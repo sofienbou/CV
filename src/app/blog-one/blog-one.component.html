@@ -12,8 +12,6 @@
   </div>
 </div>
 
-
-
 <section class="blog-area ptb-120">
   <div *ngIf="user !== undefined">
     <h5>
@@ -26,12 +24,21 @@
     </h5>
   </div>
 </section>
-
-<section>
+<!-- 
+ <section>
   <div class="button-container" *ngIf="user !== undefined">
-    <button (click)="getPostsByUser()" class="btn btn-primary">My Posts</button>
+    <button (click)="getPostsByUser()" class="btn btn-primary">Show my Posts</button>
 
     <button (click)="clearFilter()" class="btn btn-primary">x</button>
+  </div>
+</section> -->
+ 
+<section>
+  <div class="button-container" *ngIf="user !== undefined">
+    <button (click)="filter()" class="btn btn-primary" [ngClass]="{'clear-filter': filtersof}">
+      <ng-container *ngIf="filtersof; else showPosts">All posts</ng-container>
+      <ng-template #showPosts>My posts</ng-template>
+    </button>
   </div>
 </section>
 
@@ -56,15 +63,15 @@
               }}<a [routerLink]="['/single-blog', post.idPost]"> </a
             ></span>
             <a
-            [routerLink]="['/single-blog', post.idPost]"
-            class="fl-post-grid-more center"
-            >Tap to see the content <i class="fl-post-grid-more"></i
-          ></a>
-        
+              [routerLink]="['/single-blog', post.idPost]"
+              class="fl-post-grid-more center"
+              >Tap "here" to see the content <i class="fl-post-grid-more"></i
+            ></a>
+
             <app-reactions [post]="post" [user]="this.user"> </app-reactions>
+
             
-            <!-- 
-            <div *ngIf="post.contentPost.length > 255; else shortPost">
+           <!--  <div *ngIf="post.contentPost.length > 255; else shortPost">
               <p style="overflow-x: hidden; height: 150px">
                 {{ post.contentPost | slice : 0 : 310 }}...
               </p>
@@ -73,9 +80,9 @@
               <p style="overflow-x: hidden; height: 150px">
                 {{ post.contentPost }}
               </p>
-            </ng-template>
-          -->
+            </ng-template> -->
           
+
             <div *ngIf="showButtons">
               <button (click)="deletePost(post.idPost)" class="btn btn-primary">
                 Delete

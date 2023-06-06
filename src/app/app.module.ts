@@ -22,7 +22,7 @@ import { ResearchComponent } from './research/research.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { PostComponent } from './post/post.component';
-import { CommentComponent } from './comment/comment.component';
+
 import { ReplySectionComponent } from './reply-section/reply-section.component';
 import { PostSearchComponent } from './post-search/post-search.component';
 import { PopularPostsComponent } from './popular-posts/popular-posts.component';
@@ -74,7 +74,7 @@ import { ReactionsComponent } from './reactions/reactions.component';
     NotfoundComponent,
     ComingsoonComponent,
     PostComponent,
-    CommentComponent,
+   
     ReplySectionComponent,
     PostSearchComponent,
     PopularPostsComponent,

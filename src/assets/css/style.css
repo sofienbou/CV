@@ -2916,21 +2916,6 @@ Team Area CSS
   border-radius: 50%;
 }
 
-.single-team-member .member-image::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  background: #000000;
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  visibility: hidden;
-}
-
 .single-team-member .member-image .details-btn {
   position: absolute;
   left: 0;

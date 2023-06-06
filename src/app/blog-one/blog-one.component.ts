@@ -14,6 +14,7 @@ export class BlogOneComponent implements OnInit {
 handleCreated($event: Event) {
 throw new Error('Method not implemented.');
 }
+  filtersof = false;
   posts: Post[] = [];
   postForm!: FormGroup;
   showForm: boolean = false;
@@ -66,5 +67,14 @@ throw new Error('Method not implemented.');
     this.postService.getPostsByUser(this.user.id).subscribe((posts) => {
       this.posts = posts;
     });
+  }
+  filter(){
+    if(this.filtersof){
+      this.clearFilter();
+    }
+    else{
+      this.getPostsByUser();
+    }
+    this.filtersof = !this.filtersof;
   }
 }

@@ -41,8 +41,8 @@
               </ul>
             </div>
 
-            <p>
-              {{ post.contentPost }}
+            <p style="overflow-x: hidden; height: 150px">
+              {{ post.contentPost | slice : 0 : 310}}
             </p>
           </div>
 
