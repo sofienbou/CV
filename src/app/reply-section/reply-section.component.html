@@ -7,7 +7,7 @@
       Please respect our community , any bad words will be filtered .
       <span class="required">*</span>
     </p>
-    <p class="comment-form-comment">
+    <p class="comment-form-comment" style="overflow-x: hidden; height: 150px">
       <label>Comment</label>
       <textarea
         [ngModel]="commentContent"
@@ -20,6 +20,9 @@
         required="required"
       ></textarea>
     </p>
+   <!--  <p style="overflow-x: hidden; height: 150px">
+      {{ post.contentPost | slice : 0 : 310 }}
+    </p> -->
     <p class="form-submit">
       <input
         type="submit"

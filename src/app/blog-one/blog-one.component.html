@@ -68,7 +68,7 @@
             <a
               [routerLink]="['/single-blog', post.idPost]"
               class="fl-post-grid-more center"
-              >Tap "here" to see the content <i class="fl-post-grid-more"></i
+              >Tap here to see the content ...<i class="fl-post-grid-more"></i
             ></a>
             <br />
             <app-reactions [post]="post" [user]="this.user"> </app-reactions>
@@ -85,17 +85,20 @@
             </ng-template> -->
 
             <div *ngIf="showButtons">
-              <button (click)="deletePost(post.idPost)" class="btn btn-primary">
-                Delete
-              </button>
-
-              <button
-                class="btn btn-primary"
-                type="submit"
-                (click)="openUpdateForm(post.idPost)"
-              >
-                Update
-              </button>
+            
+                <button (click)="deletePost(post.idPost)" class="btn btn-primary rabak">
+                  Delete
+                </button>
+ 
+                <button
+                  class="btn btn-primary rabak"
+                  type="submit"
+                  (click)="openUpdateForm(post.idPost)"
+                >
+                  Update
+                </button>
+             
+              
               <div *ngIf="updateForm == post.idPost">
                 <app-update-post
                   [post]="post"

@@ -6,7 +6,7 @@
       <h2>{{ post.namePost }}</h2>
 
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a routerLink="aboutUs">Home</a></li>
         <li>Blog Details</li>
       </ul>
     </div>
@@ -42,43 +42,9 @@
             </div>
 
             <p style="overflow-x: hidden; height: 150px">
-              {{ post.contentPost | slice : 0 : 310}}
+              {{ post.contentPost | slice : 0 : 310 }}
             </p>
           </div>
-
-         <!--  <div class="article-footer">
-            <div class="article-tags">
-              <span><i class="fas fa-bookmark"></i></span>
-
-              <a href="#">Fashion</a>, <a href="#">Games</a>,
-              <a href="#">Travel</a>
-            </div>
-
-            <div class="article-share">
-              <ul class="social">
-                <li>
-                  <a href="#" target="_blank"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="#" target="_blank"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#" target="_blank"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
- -->
-     <!--   -->
         </div>
 
         <div class="comments-area">
@@ -116,7 +82,7 @@
                   </div>
                   <ng-template #contentShow
                     ><p>
-                      {{ comment.content }}
+                      {{ comment.content | slice : 0 : 190 }}
                     </p></ng-template
                   >
 
@@ -143,8 +109,6 @@
         <aside class="widget-area" id="secondary">
           <app-post-search></app-post-search>
           <app-popular-posts></app-popular-posts>
-
-          
         </aside>
       </div>
     </div>

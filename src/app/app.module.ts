@@ -74,7 +74,7 @@ import { ReactionsComponent } from './reactions/reactions.component';
     NotfoundComponent,
     ComingsoonComponent,
     PostComponent,
-   
+  
     ReplySectionComponent,
     PostSearchComponent,
     PopularPostsComponent,
@@ -114,7 +114,10 @@ import { ReactionsComponent } from './reactions/reactions.component';
       useValue: {
         autoLogin: false,
         providers: [
-         
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('2353063484872542'),
+          },
         ],
         onError: (err) => {
           console.error(err);

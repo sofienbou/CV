@@ -1,4 +1,4 @@
-.button-container{
+.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
   height: 220px; /* or whatever height you want */
   object-fit: cover; /* this will ensure the image fills the space without stretching */
 }
-.buttoncenter{
+.buttoncenter {
   display: block;
   margin: 0 auto;
 }
@@ -52,4 +52,10 @@
   align-items: center;
   border-radius: 20px;
   padding: 10px;
+}
+.rabak {
+  margin-left: 45px;
+  margin-right: 45px;
+  align-items: center;
+  justify-content: center;
 }
