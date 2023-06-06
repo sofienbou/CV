@@ -24,8 +24,8 @@
     </h5>
   </div>
 </section>
-<!-- 
- <section>
+
+<!-- <section>
   <div class="button-container" *ngIf="user !== undefined">
     <button (click)="getPostsByUser()" class="btn btn-primary">Show my Posts</button>
 
@@ -85,20 +85,21 @@
             </ng-template> -->
 
             <div *ngIf="showButtons">
-            
-                <button (click)="deletePost(post.idPost)" class="btn btn-primary rabak">
-                  Delete
-                </button>
- 
-                <button
-                  class="btn btn-primary rabak"
-                  type="submit"
-                  (click)="openUpdateForm(post.idPost)"
-                >
-                  Update
-                </button>
-             
-              
+              <button
+                (click)="deletePost(post.idPost)"
+                class="btn btn-primary rabak"
+              >
+                Delete
+              </button>
+
+              <button
+                class="btn btn-primary rabak"
+                type="submit"
+                (click)="openUpdateForm(post.idPost)"
+              >
+                Update
+              </button>
+
               <div *ngIf="updateForm == post.idPost">
                 <app-update-post
                   [post]="post"

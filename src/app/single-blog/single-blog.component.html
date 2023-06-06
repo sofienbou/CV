@@ -85,17 +85,20 @@
                       {{ comment.content | slice : 0 : 190 }}
                     </p></ng-template
                   >
-
-                  <button
-                    class="btn-delete"
-                    (click)="removeComment(comment.idComment)"
+                  <div
+                    *ngIf="user !== undefined && user.id === comment.user.id"
                   >
-                    Delete
-                  </button>
+                    <button
+                      class="btn-delete"
+                      (click)="removeComment(comment.idComment)"
+                    >
+                      Delete
+                    </button>
 
-                  <button class="btn-edit" (click)="editComment(comment)">
-                    Edit
-                  </button>
+                    <button class="btn-edit" (click)="editComment(comment)">
+                      Edit
+                    </button>
+                  </div>
                 </div>
               </article>
             </li>

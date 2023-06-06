@@ -21,7 +21,7 @@ export class SingleBlogComponent implements OnInit {
 
   updateComment: number = 0;
   updatedcomment!: Comment;
-  
+
   constructor(
     private commentService: CommentService,
     private postService: PostService,
@@ -31,6 +31,9 @@ export class SingleBlogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.user = this.storageService.getUser();
+    if (Object.keys(this.user).length === 0) this.user = undefined;
+
     this.route.paramMap.subscribe((params) => {
       this.postId = +params.get('postId')!;
       this.postService.getPost(this.postId).subscribe((post) => {

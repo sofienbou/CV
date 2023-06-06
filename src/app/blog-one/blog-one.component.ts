@@ -11,15 +11,15 @@ import { post } from 'jquery';
   styleUrls: ['./blog-one.component.css'],
 })
 export class BlogOneComponent implements OnInit {
-handleCreated($event: Event) {
-throw new Error('Method not implemented.');
-}
+  handleCreated($event: Event) {
+    throw new Error('Method not implemented.');
+  }
   filtersof = false;
   posts: Post[] = [];
   postForm!: FormGroup;
   showForm: boolean = false;
 
-  user!: any;
+  user: any;
   filterValue: string = '';
   showButtons: boolean = false;
   updateForm: number = 0;
@@ -32,6 +32,7 @@ throw new Error('Method not implemented.');
   ngOnInit(): void {
     console.log('Current user:', this.storageService.getUser()); // add this line to check the user value
     this.user = this.storageService.getUser();
+    if (Object.keys(this.user).length === 0) this.user = undefined;
     this.postService.getPosts().subscribe((posts) => {
       this.posts = posts;
     });
@@ -68,11 +69,10 @@ throw new Error('Method not implemented.');
       this.posts = posts;
     });
   }
-  filter(){
-    if(this.filtersof){
+  filter() {
+    if (this.filtersof) {
       this.clearFilter();
-    }
-    else{
+    } else {
       this.getPostsByUser();
     }
     this.filtersof = !this.filtersof;

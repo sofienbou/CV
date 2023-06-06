@@ -13,18 +13,12 @@
                     <div class="role-container">
                         <form>
                             <div style="display:flex;">
-                            <label>
-                                <input type="radio" name="radio" value="doctor" checked="true"  (change)="changeRole($event)">
-                                <span>DOCTOR</span>
-                            </label>
-                            <label>
-                                <input type="radio" value="patient"  name="radio" (change)="changeRole($event)">
-                                <span>PATIENT</span>
-                            </label>
-                            <label>
+                          
+                            
+                           <!--  <label>
                                 <input type="radio" value="pharmacy" name="radio" (change)="changeRole($event)">
                                 <span>PHARMACY</span>
-                            </label>
+                            </label> -->
                         </div>
                         </form>
                     </div>
@@ -43,7 +37,7 @@
                     <a (click)="signInWithFB()" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a (click)="signInWithGoogle()" class="social"><i class="fab fa-google-plus-g"></i></a>
                 </div>
-                <span>or use your account</span>
+                <span>use your account</span>
                 <input type="text" placeholder="UserName" [(ngModel)]="username1" [ngModelOptions]="{standalone: true} " id="username"/>
                 <input type="password" placeholder="Password" [(ngModel)]="password1" [ngModelOptions]="{standalone: true} " id="password"/>
                 <a routerLink="/forgetPassword">Forgot your password?</a>

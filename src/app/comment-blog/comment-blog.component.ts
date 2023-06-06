@@ -20,7 +20,7 @@ export class CommentBlogComponent implements OnInit {
     private storageService: TokenStorageService
   ) {}
   ngOnInit() {
-    this.user = this.storageService.getUser();
+    this.user = this.storageService.getUser() ;
   }
   ngOnChanges() {
     this.editedComment = { ...this.comment };
