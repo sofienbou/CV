@@ -1,65 +1,27 @@
-.emoji {
-  font-family: "Noto Color Emoji";
-  font-size: 2rem;
-  color: #ff5a5f;
+.reaction-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Add a small space between the icon and the count */
 }
 .dislike {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
 }
-svg {
-  pointer-events: all;
+.reaction-icon {
+  width: 25px; /* Adjust the width as desired */
+  height: 25px; /* Adjust the height as desired */
+  filter: grayscale(100%); /* Set the icons to appear in black and white */
 }
+
+.reaction-icon:hover {
+  filter: grayscale(0%); /* Revert to original color on hover */
+}
+
 .reaction-count {
-  margin: 1em;
+  margin: 0;
 }
-.reaction-container {
-  display: flex;
+.center {
+  display:flex;
   align-items: center;
-}
-.like {
-  -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
-  filter: invert(100%);
-}
-button {
-  display: inline-flex;
-  align-items: center;
-  border: none;
-  border-radius: 50%;
-  padding: 0.5rem;
-  background-color: #f0f0f0;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #e0e0e0;
-}
-
-.reactions-wrapper {
-  display: flex;
-  gap: 10px;
-}
-
-.reactions-wrapper input[type="radio"] {
-  display: none;
-}
-
-.reactions-wrapper label {
-  display: inline-block;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-}
-
-.reactions-wrapper label:hover {
-  background-color: #ccc;
-}
-
-.reactions-wrapper input[type="radio"]:checked + label {
-  background-color: #ccc;
-  color: white;
-  border: 1px solid #ccc;
+  justify-content: center;
 }
