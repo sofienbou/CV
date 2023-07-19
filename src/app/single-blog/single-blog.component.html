@@ -40,10 +40,6 @@
                 </li>
               </ul>
             </div>
-
-            <p style="overflow-x: hidden; height: 150px">
-              {{ post.contentPost | slice : 0 : 310 }}
-            </p>
           </div>
         </div>
 
@@ -81,8 +77,11 @@
                     ></app-comment-blog>
                   </div>
                   <ng-template #contentShow
-                    ><p>
-                      {{ comment.content | slice : 0 : 190 }}
+                    ><p >
+                      {{ comment.content}}
+                    <!--   {{ comment.content | slice : 0 : 50 }}..
+                      {{ comment.content | slice : 50 : 100 }} ..
+                      {{ comment.content | slice : 100 : 150 }} -->
                     </p></ng-template
                   >
                   <div

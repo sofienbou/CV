@@ -69,22 +69,24 @@ export class LoginComponent implements OnInit {
       password: this.password1,
     };
 
-    this.http.post('http://localhost:8075/api/auth/signin', bodyData).subscribe(
-      (resultData: any) => {
-        this.storageService.saveToken(resultData.accessToken);
-        this.storageService.saveUser(resultData);
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.storageService.getUser().roles;
-        console.log('login user');
-        console.log(resultData);
-        this.router.navigateByUrl('/blogOne');
-      },
-      (error: any) => {
-        this.errorMessage = error;
-        console.error('There was an error!', error);
-      }
-    );
+    this.http
+      .post('http://springboot-mysql-container:8080/api/auth/signin', bodyData)
+      .subscribe(
+        (resultData: any) => {
+          this.storageService.saveToken(resultData.accessToken);
+          this.storageService.saveUser(resultData);
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.roles = this.storageService.getUser().roles;
+          console.log('login user');
+          console.log(resultData);
+          this.router.navigateByUrl('/blogOne');
+        },
+        (error: any) => {
+          this.errorMessage = error;
+          console.error('There was an error!', error);
+        }
+      );
   }
 
   reloadPage(): void {

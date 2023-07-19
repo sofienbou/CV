@@ -15,3 +15,6 @@
 .btn-edit {
   color: #007bff;
 }
+.comment-content p{
+white-space: pre-wrap;
+}

@@ -4,8 +4,6 @@ import { PostService } from '../services/post.service';
 import { CreatePost, Post } from '../models/post.model';
 import { Validators } from '@angular/forms';
 import { TokenStorageService } from '../service/token-storage.service';
-import { User } from '../models/user.model';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-post-form',
@@ -41,6 +39,7 @@ export class PostFormComponent implements OnInit {
       };
       this.postService.createPost(post, this.user.id!).subscribe((posts) => {
         this.message = 'Post créé avec succés';
+
         window.location.reload();
       });
     }

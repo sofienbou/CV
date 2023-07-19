@@ -7,10 +7,13 @@ import { Reaction, createReaction } from '../models/reaction.model';
   providedIn: 'root',
 })
 export class ReactionService {
-  updateReaction(idReaction: number, arg1: { reactionType: import("../models/reaction.model").ReactionType; }) {
+  updateReaction(
+    idReaction: number,
+    arg1: { reactionType: import('../models/reaction.model').ReactionType }
+  ) {
     throw new Error('Method not implemented.');
   }
-  private apiUrl = 'http://localhost:8075/react/';
+  private apiUrl = 'http://springboot-mysql-container:8080/react/';
 
   constructor(private http: HttpClient) {}
 
@@ -33,5 +36,4 @@ export class ReactionService {
     const url = `${this.apiUrl}remove?id=${reactionId}`;
     return this.http.delete<void>(url);
   }
-  
 }

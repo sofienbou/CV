@@ -7,7 +7,7 @@ import { CreatePost, UpdatePost, Post } from '../models/post.model';
   providedIn: 'root',
 })
 export class PostService {
-  private apiUrl = 'http://localhost:8075/post/';
+  private apiUrl = 'http://springboot-mysql-container:8080/post/';
 
   constructor(private http: HttpClient) {}
 

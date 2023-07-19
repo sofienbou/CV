@@ -9,7 +9,7 @@ interface commentCreate {
   providedIn: 'root',
 })
 export class CommentService {
-  private baseUrl = 'http://localhost:8075/comment';
+  private baseUrl = 'http://springboot-mysql-container:8080/comment';
 
   constructor(private http: HttpClient) {}
 
