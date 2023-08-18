@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  overflow-x: hidden;
+  width: 100%; /* This will hide horizontal scroll */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* Set box-sizing to border-box for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

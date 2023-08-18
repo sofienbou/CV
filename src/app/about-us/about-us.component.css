@@ -4,10 +4,12 @@
 }
 
 .img-container {
-  margin-right: 50px !important;
+  display: flex;
+  margin-right: 20px !important;
 }
 
 .taswirti {
+  display: flex;
   margin-right: 50px !important;
   padding: 0 2em !important;
 }
@@ -72,16 +74,12 @@
   padding: 20px;
 }
 
-
 .box {
   background-color: #fff;
   padding: 2.5rem !important;
   margin-bottom: 24px;
   box-shadow: 0 0 1rem 0.1rem rgb(0 0 0 / 10%);
   border-radius: 1rem;
-  
- 
-  
 }
 .box:hover {
   /* Apply transform effect on hover */
@@ -89,7 +87,7 @@
   transition: transform 0.3s;
 }
 .hr {
- border-opacity: 1;
- margin-top: 4rem;
-    margin-bottom: 4rem;
+  border-opacity: 1;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }

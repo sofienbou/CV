@@ -15,9 +15,9 @@ import { ActivatedComponent } from './activated/activated.component';
 import { EditProfilComponent } from './edit-profil/edit-profil.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/aboutUs', pathMatch: 'full' },
+  { path: '', redirectTo: '/aboutMe', pathMatch: 'full' },
 
-  { path: 'aboutUs', component: AboutUsComponent },
+  { path: 'aboutMe', component: AboutUsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'blogOne', component: BlogOneComponent },
