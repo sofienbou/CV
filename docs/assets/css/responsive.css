@@ -1767,7 +1767,7 @@
   }
   .labto-mobile-nav.mean-container .mean-nav .navbar-nav {
     height: 351px;
-    overflow-y: hidden;
+    overflow-y: scroll;
   }
   .labto-nav {
     display: none;
